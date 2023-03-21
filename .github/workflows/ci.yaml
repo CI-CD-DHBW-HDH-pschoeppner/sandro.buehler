@@ -1,0 +1,14 @@
+on: [push]
+jobs:
+  ci_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: install npm modules
+        run: npm install
+      - name: run EsLint 🕳
+        run: npm run lint
+      - name: run prettier check 🖌
+        run: npm run format:check
+      - name: unit tests 🧪
+        run: npm run test 
