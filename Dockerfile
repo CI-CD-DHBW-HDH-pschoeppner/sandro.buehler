@@ -1,12 +1,17 @@
-# Pull base image
-FROM debian:latest
+# Base image
+FROM node:latest
 
-# Install nginx and adjust nginx config to stay in foreground
-RUN apt-get update && apt-get install --no-install-recommends -y nginx; \
- echo "daemon off;" >> /etc/nginx/nginx.conf
+# Set working directory
+WORKDIR /app
 
-# Expose HTTP
-EXPOSE 80
+# Copy source code to container
+COPY . .
 
-# Start nginx
-CMD ["/usr/sbin/nginx"]
+# Install dependencies
+RUN npm install
+
+# Expose port
+EXPOSE 3000
+
+# Start the server
+CMD ["npm", "run", "dev"]
