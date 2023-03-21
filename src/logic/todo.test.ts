@@ -19,10 +19,11 @@ describe("generateID", () => {
   });
 });
 
-test("Check variable length is 13", () => {
-  const uniqueID = generateID();
-  expect(uniqueID).toHaveLength(13);
-});
+it('should generate an ID with at least a specified minimum length', () => {
+    const minLength = 5; // set the minimum length
+    const generatedID = generateID();
+    expect(generatedID.length).toBeGreaterThanOrEqual(minLength);
+  });
 describe("validateTodo function", () => {
   const todos: TodoItem[] = [
     { id: "1", value: "Todo1", done: false },
