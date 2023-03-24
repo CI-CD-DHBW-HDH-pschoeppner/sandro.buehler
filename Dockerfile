@@ -14,4 +14,6 @@ RUN npm install
 EXPOSE 3000
 
 # Start the server
-CMD ["npm", "run", "dev"]
+# In der Regel ist es keine gute Idee, einen Development Server in einem Docker container laufen zu lassen
+# Aber theoretisch kann das genutzt werden, um die Website zur Verfügung zu stellen
+CMD ["npm", "run", "dev"] 

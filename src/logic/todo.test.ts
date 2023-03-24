@@ -86,3 +86,5 @@ describe("formatTodo function", () => {
     });
   });
 });
+
+// keine Tests für generateColor

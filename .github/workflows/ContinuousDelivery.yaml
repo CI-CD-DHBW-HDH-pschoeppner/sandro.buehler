@@ -16,3 +16,6 @@ jobs:
           context: .
           push: false
           tags: todo:latest
+          # Hier fehlt leider der richtige Tag 
+          # Die Aufgabe war, das Image in GitHub Packages zu pushen
+          # D.h., dass zum einen ein Login erfolgen muss, zum anderen der Tag "ghcr.io/<org name>/..." sein muss
